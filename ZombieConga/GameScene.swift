@@ -58,5 +58,7 @@ class GameScene: SKScene {
   
   override func update(currentTime: CFTimeInterval) {
     /* Called before each frame is rendered */
+    superZombie.position = CGPoint(x: superZombie.position.x + 4,
+      y: superZombie.position.y)
   }
 }
