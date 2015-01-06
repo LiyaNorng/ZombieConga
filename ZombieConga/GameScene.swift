@@ -9,6 +9,10 @@
 import SpriteKit
 
 class GameScene: SKScene {
+  
+  let superZombie:SKSpriteNode = SKSpriteNode(imageNamed: "zombie3")
+  //superZombie.name = "player"
+  
   override func didMoveToView(view: SKView) {
     /* Setup your scene here */
     /* Initial code
@@ -19,7 +23,15 @@ class GameScene: SKScene {
     
     self.addChild(myLabel)
     */
-    backgroundColor = SKColor.whiteColor()
+    let background = SKSpriteNode(imageNamed: "background1")
+    background.position = CGPoint(x:size.width/2, y:size.height/2)
+    background.zPosition = -1
+    
+    addChild(background)
+    
+    
+    superZombie.position = CGPoint(x: 400, y: 400)
+    addChild(superZombie)
   }
   
   override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -28,15 +40,17 @@ class GameScene: SKScene {
     for touch: AnyObject in touches {
       let location = touch.locationInNode(self)
       
-      let sprite = SKSpriteNode(imageNamed:"Spaceship")
+      let sprite = SKSpriteNode(imageNamed:"zombie1")
       
       sprite.xScale = 0.5
       sprite.yScale = 0.5
       sprite.position = location
       
-      let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
+      let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:2)
       
       sprite.runAction(SKAction.repeatActionForever(action))
+      
+      print(sprite)
       
       self.addChild(sprite)
     }

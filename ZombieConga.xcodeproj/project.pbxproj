@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		292AB3D11A59EB160049D047 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292AB3D01A59EB160049D047 /* AppDelegate.swift */; };
-		292AB3D31A59EB160049D047 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 292AB3D21A59EB160049D047 /* GameScene.sks */; };
 		292AB3D51A59EB160049D047 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292AB3D41A59EB160049D047 /* GameScene.swift */; };
 		292AB3D71A59EB160049D047 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292AB3D61A59EB160049D047 /* GameViewController.swift */; };
 		292AB3DA1A59EB160049D047 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 292AB3D81A59EB160049D047 /* Main.storyboard */; };
@@ -37,7 +36,6 @@
 		292AB3CB1A59EB160049D047 /* ZombieConga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZombieConga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		292AB3CF1A59EB160049D047 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		292AB3D01A59EB160049D047 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		292AB3D21A59EB160049D047 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		292AB3D41A59EB160049D047 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		292AB3D61A59EB160049D047 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		292AB3D91A59EB160049D047 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				292AB3D01A59EB160049D047 /* AppDelegate.swift */,
-				292AB3D21A59EB160049D047 /* GameScene.sks */,
 				292AB3D41A59EB160049D047 /* GameScene.swift */,
 				292AB3D61A59EB160049D047 /* GameViewController.swift */,
 				292AB3D81A59EB160049D047 /* Main.storyboard */,
@@ -229,7 +226,6 @@
 				292AB3DF1A59EB160049D047 /* LaunchScreen.xib in Resources */,
 				292AB3FD1A59F71F0049D047 /* MainMenu.png in Resources */,
 				292AB3DC1A59EB160049D047 /* Images.xcassets in Resources */,
-				292AB3D31A59EB160049D047 /* GameScene.sks in Resources */,
 				292AB3FB1A59F71F0049D047 /* background1.png in Resources */,
 				292AB3FC1A59F71F0049D047 /* background2.png in Resources */,
 				292AB3FF1A59F71F0049D047 /* YouWin.png in Resources */,
