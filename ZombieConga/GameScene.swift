@@ -11,18 +11,11 @@ import SpriteKit
 class GameScene: SKScene {
   
   let superZombie:SKSpriteNode = SKSpriteNode(imageNamed: "zombie3")
+  var lastUpdateTime: NSTimeInterval = 0
+  var dt: NSTimeInterval = 0
   //superZombie.name = "player"
   
   override func didMoveToView(view: SKView) {
-    /* Setup your scene here */
-    /* Initial code
-    let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-    myLabel.text = "Hello, World!";
-    myLabel.fontSize = 65;
-    myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
-    
-    self.addChild(myLabel)
-    */
     let background = SKSpriteNode(imageNamed: "background1")
     background.position = CGPoint(x:size.width/2, y:size.height/2)
     background.zPosition = -1
@@ -58,6 +51,14 @@ class GameScene: SKScene {
   
   override func update(currentTime: CFTimeInterval) {
     /* Called before each frame is rendered */
+    if lastUpdateTime > 0 {
+      dt = currentTime - lastUpdateTime
+    } else {
+      dt = 0
+    }
+    lastUpdateTime = currentTime
+    println("\(dt*1000) milliseconds since last update")
+    
     superZombie.position = CGPoint(x: superZombie.position.x + 4,
       y: superZombie.position.y)
   }
