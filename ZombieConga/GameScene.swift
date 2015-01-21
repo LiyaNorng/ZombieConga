@@ -13,6 +13,8 @@ class GameScene: SKScene {
   let superZombie:SKSpriteNode = SKSpriteNode(imageNamed: "zombie3")
   var lastUpdateTime: NSTimeInterval = 0
   var dt: NSTimeInterval = 0
+  var zombieMovePointsPerSec: CGFloat = 480.0
+  var velocity = CGPointZero
   //superZombie.name = "player"
   
   override func didMoveToView(view: SKView) {
@@ -49,6 +51,7 @@ class GameScene: SKScene {
     }
   }
   
+  
   override func update(currentTime: CFTimeInterval) {
     /* Called before each frame is rendered */
     if lastUpdateTime > 0 {
@@ -59,7 +62,35 @@ class GameScene: SKScene {
     lastUpdateTime = currentTime
     println("\(dt*1000) milliseconds since last update")
     
-    superZombie.position = CGPoint(x: superZombie.position.x + 4,
-      y: superZombie.position.y)
+    //superZombie.position = CGPoint(x: superZombie.position.x + 4,
+    //  y: superZombie.position.y)
+    
+    moveSprite(superZombie, velocity: CGPoint(x: zombieMovePointsPerSec, y: 0))
   }
+  
+  func moveSprite(sprite: SKSpriteNode, velocity: CGPoint) {
+    //1
+    let amountToMove = CGPoint(x: velocity.x * CGFloat(dt),
+      y: velocity.y * CGFloat(dt))
+    
+    println("Amount to move: \(amountToMove)")
+    
+    sprite.position = CGPoint(x: sprite.position.x + amountToMove.x,
+      y: sprite.position.y + amountToMove.y)
+    
+  }
+  
+  
+  func moveZombieToward(location: CGPoint) {
+    let offset = CGPoint(x: location.x - superZombie.position.x,
+      y: location.y - superZombie.position.y)
+    
+    let length = sqrt(Double(offset.x * offset.x + offset.y * offset.y))
+    
+    //let direction = CGPoint(x: offset.x / CGPoint(length), y: offset.y / CGFloat(length))
+    
+    let direction = CGPoint(x: offset.x / CGFloat(length), y: offset.y / CGFloat(length))
+    velocity = CGPoint(x: direction.x * zombieMovePointsPerSec, y: direction.y * zombieMovePointsPerSec)
+  }
+
 }
